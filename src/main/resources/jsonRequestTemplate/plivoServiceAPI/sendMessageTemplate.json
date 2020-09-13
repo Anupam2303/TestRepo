@@ -1,0 +1,6 @@
+{
+  "src": "#src",
+  "dst": "#dst",
+  "text": "Hello, this is test message by anupam",
+  "url": "http://foo.com/sms_status/"
+}

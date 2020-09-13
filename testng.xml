@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PlivoSuite">
+
+    <parameter name="environment" value="qa1" />
+
+    <listeners>
+        <listener class-name="com.anupam.frameworkSetup.testngSupport.TestInitialization"></listener>
+        <listener class-name="com.anupam.frameworkSetup.testngSupport.TestInterceptor"></listener>
+        <listener class-name="com.anupam.frameworkSetup.testngSupport.TestListener"></listener>
+    </listeners>
+
+    <test name="PlivoTest">
+        <classes>
+            <class name="com.anupam.frameworkSetup.SetupClass"/>
+            <class name="com.anupam.tests.PlivoServiceTest">
+            </class>
+        </classes>
+    </test>
+
+</suite>

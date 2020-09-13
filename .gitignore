@@ -1,0 +1,16 @@
+.classpath
+.project
+.settings/
+*/target/**
+*/test-output/**
+target/
+test-output/
+velocity.log
+/.idea/
+.idea/modules.xml
+.idea/rmsg-api-tests.iml
+.idea/vcs.xml
+modules.xml
+rakuten-api-tests.iml
+vcs.xml
+/testbasic.xml

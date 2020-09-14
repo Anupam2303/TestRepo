@@ -12,48 +12,6 @@ import com.jayway.jsonpath.PathNotFoundException;
 
 public class BaseAPI {
     static Properties properties;
-    static Map<String, File> files;
-
-    /*
-      Load property from given property file
-     */
-    public static void loadPropertiesFile(final String proprtyFileName) throws IOException {
-
-        // Change this
-        final String propertyFileLocation =
-                System.getProperty("user.dir") + File.separator + "src/main/resources" + File.separator + "properties";
-
-        final FileReader reader = new FileReader(propertyFileLocation + File.separator + proprtyFileName);
-        properties = new Properties();
-        properties.load(reader);
-    }
-
-    /*
-      Load property from given property file
-     */
-    public Properties loadPropertiesFile(final String proprtyFileName, Properties properties) throws IOException {
-
-        // TO DO :Need to change this code
-        final String propertyFileLocation = System.getProperty("user.dir") + File.separator + "src/main/resources"
-                + File.separator + "properties";
-
-        final FileReader reader = new FileReader(propertyFileLocation + File.separator + proprtyFileName);
-        properties = new Properties();
-        properties.load(reader);
-        return properties;
-    }
-
-    public Object getProperty(final String property) {
-        return properties.get(property);
-    }
-
-    public Set<Map.Entry<Object, Object>> getPropertySet() {
-        return properties.entrySet();
-    }
-
-    public Set<Map.Entry<Object, Object>> getPropertySet(final Properties properties) {
-        return properties.entrySet();
-    }
 
     public JSONObject insertValues(JSONObject jsonObject, final String fieldJsonPath, final Object value) {
         try {

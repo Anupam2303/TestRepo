@@ -215,23 +215,12 @@ public class BaseCreator {
         return "";
     }
 
-    /**
-     * delete merchant json data with json path
-     * @param path json path for finding json data to delete
-     * @param json json object
-     * @return Modified json object
-     */
+
 
     public JSONObject deleteJsonByPath(final String path, final JSONObject json) {
         return JsonPath.parse(json).delete(path).json();
     }
 
-    /**
-     * delete multiple merchant json objects with json path
-     * @param paths list of jsonpaths to be deleted
-     * @param json json object
-     * @return Modified json object
-     */
 
     public JSONObject deleteJsonByPath(final ArrayList<String> paths, final JSONObject json) {
 
@@ -242,15 +231,7 @@ public class BaseCreator {
         return json;
     }
 
-    /**
-     *
-     * @param dataMap
-     *          of jsonpath and value
-     * @param json
-     *          json in which values need to be changed
-     * @return
-     *          modified json
-     */
+
     public JSONObject updateJsonByPath(final HashMap<String, String> dataMap, final JSONObject json) {
 
         final Iterator<Map.Entry<String, String>> it = dataMap.entrySet().iterator();
@@ -262,49 +243,6 @@ public class BaseCreator {
         }
         return json;
     }
-    /**
-     * Method for adding query string e.g delete
-     *
-     * @param parameters value of string to append
-     * @return class
-     */
-    public BaseCreator queryStringWithoutEncoding(final Map<String, Object> parameters) {
 
-        if (parameters != null) {
-            for (final Map.Entry<String, Object> param : parameters.entrySet()) {
-                final StringBuilder queryString = new StringBuilder();
-                if (this.url.toString().contains("?")) {
-                    queryString.append("&");
-                } else {
-                    queryString.append("?");
-                }
-                queryString.append(param.getKey() + "=").append(param.getValue() == null ? "" : param.getValue());
-                this.url += queryString.toString();
-            }
-        }
-        return this;
-    }
 
-    /**
-     * Method for adding query string e.g delete
-     *
-     * @param name
-     *            Query parameter
-     * @param value
-     *            Query parameter value
-     * @return class
-     */
-    public BaseCreator queryStringWithoutEncoding(final String name, final Object value) {
-
-        final StringBuilder queryString = new StringBuilder();
-        if (this.url.toString().contains("?")) {
-            queryString.append("&");
-        } else {
-            queryString.append("?");
-        }
-        queryString.append(name + "=").append(value == null ? "" : value);
-        this.url += queryString.toString();
-
-        return this;
-    }
 }

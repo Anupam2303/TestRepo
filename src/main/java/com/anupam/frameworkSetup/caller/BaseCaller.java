@@ -63,4 +63,15 @@ public class BaseCaller {
                 + response.toString());
         return response;
     }
+
+    public String doGet(final String endPoint) {
+        Utils.log("End Point: " + endPoint);
+        final String response = given()
+                .when().get(endPoint).then().extract()
+                .asString();
+        System.out.println(response);
+        Utils.log( Utils.ANSI_MAGENTA_BACKGROUND + "Response Payload <--<-- " + Utils.ANSI_RESET
+                + response.toString());
+        return response;
+    }
 }
